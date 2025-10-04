@@ -13,6 +13,8 @@ def bsd_rand(seed):
    rand.seed = seed
    return rand
 
+# https://rosettacode.org/wiki/Linear_congruential_generator (not really statistically robust or high entropy but it's ok for a test)
+
 random_generator = bsd_rand(20251006)
 
 def twoDice ():
@@ -225,5 +227,6 @@ def diceFrequency (nRolls):
 #%%
 
 diceFrequency(nRolls)
+
 
 
