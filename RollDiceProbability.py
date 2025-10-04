@@ -6,42 +6,6 @@ Created on Sat Oct  4 16:43:03 2025
 """
 
 
-#%% 
-
-def bsd_rand(seed):
-   def rand():
-      rand.seed = (1103515245*rand.seed + 12345) & 0x7fffffff
-      return rand.seed
-   rand.seed = seed
-   return rand             # https://rosettacode.org/wiki/Linear_congruential_generator (not really statistically robust or high entropy but it's ok for a test)
-
-
-random_generator = bsd_rand(20251005)
-
-
-dice_1 = [1,2,3,4,5,6]
-dice_2 = [1,2,3,4,5,6]
-
-
-a = random_generator() 
-b = str(a)
-b = int(b[6])
-
-if b in dice_1:
-
-    draw_1 = b
-
-c = random_generator() 
-d = str(c)
-d = int(d[6])
-
-if d in dice_2:
-    
-    draw_2 = d
-    
-#%%
-
-
 def bsd_rand(seed):
    def rand():
       rand.seed = (1103515245*rand.seed + 12345) & 0x7fffffff
@@ -261,4 +225,5 @@ def diceFrequency (nRolls):
 #%%
 
 diceFrequency(nRolls)
+
 
